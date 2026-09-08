@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: pink;
+}
+
+/* 1. Fixed Base Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.2rem 2rem;
+  background-color: transparent; /* Initially transparent */
+  transition: all 0.4s ease-in-out; /* Smooth background/padding transition */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* 2. Menu Link Styling & Hover Effects */
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: brown; 
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  color: brown; 
+}
+
+.nav-item:hover::after {
+  width: 100%;}
+
+/* 3. Scrolled State (Triggered by JS) */
+.navbar.scrolled {
+  background-color: #ffffff; /* Turns white on scroll */
+  padding: 0.8rem 2rem; /* Optional: shrink navbar height */
+  box-shadow: 0 4px 10px pink;
+}
+
+.navbar.scrolled .logo,
+.navbar.scrolled .nav-item {
+  color: brown; 
+}
+
+.navbar.scrolled .nav-item:hover {
+  color: brown;
+}
+
+/* Content placeholder spacing */
+.content-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#home { background: brown; color: white; }
+#about { background: pink; color: #333; }
